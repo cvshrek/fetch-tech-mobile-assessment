@@ -1,1 +1,2 @@
-# fetch-tech-mobile-assessment
+# Getting Started
+FETCH TECHNOLOGY CODING ASSESSMENT
