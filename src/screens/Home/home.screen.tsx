@@ -1,13 +1,17 @@
-import { Container } from '@components';
+import { Container, Text } from '@components';
 import React from 'react';
-import { Text } from 'react-native';
 
-function HomeScreen() {
+function HomeScreen(): React.ReactElement {
   return (
-    <Container>
-      <Text style={{ fontSize: 20 }}>
+    <Container safeArea>
+      <Text style={{ fontSize: 20 }} isBold>
         HOME
       </Text>
+      <Container style={{ backgroundColor: 'blue', padding: 16 }}>
+        <Text style={{ fontSize: 20 }} isBold>
+          HOME
+        </Text>
+      </Container>
     </Container>
   );
 }

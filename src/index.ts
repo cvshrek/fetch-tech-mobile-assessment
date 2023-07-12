@@ -1,3 +1,1 @@
-/* eslint-disable import/no-unresolved */
-/* eslint-disable import/prefer-default-export */
-export { default as App } from '@navigators';
+export { default as App } from './navigators/app.navigator';

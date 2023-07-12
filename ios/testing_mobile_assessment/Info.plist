@@ -53,10 +53,13 @@
 	<false/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Comfortaa-Bold.ttf</string>
-		<string>Comfortaa-Light.ttf</string>
-		<string>Comfortaa-Medium.ttf</string>
-		<string>Comfortaa-Regular.ttf</string>
+		<string>MaterialIcons.ttf</string>
+		<string>Ionicons.ttf</string>
+		<string>FontAwesome5_Solid.ttf</string>
+		<string>Feather.ttf</string>
+		<string>PlusJakartaSans-ExtraLight.ttf</string>
+		<string>PlusJakartaSans-Regular.ttf</string>
+		<string>PlusJakartaSans-SemiBold.ttf</string>
 	</array>
 </dict>
 </plist>
