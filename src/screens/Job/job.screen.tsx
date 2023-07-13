@@ -3,14 +3,14 @@ import {
   Container,
   Row,
   JobItem,
+  FloatButton,
 } from '@components';
 import { Colors } from '@constants/colors';
 import { Dimens } from '@constants/dimens';
 import useJob from '@hooks/useJob/use-job.hook';
 import React, { useCallback } from 'react';
-import { FlatList, Pressable, View } from 'react-native';
+import { FlatList, View } from 'react-native';
 import { TJob } from '@types';
-import Icon from 'react-native-vector-icons/Ionicons';
 
 const filterMenus = [{
   title: 'Ongoing',
@@ -61,14 +61,14 @@ function JobScreen(): React.ReactElement {
   ), []);
 
   return (
-    <Container>
+    <Container gradientBackground>
       <Row style={{ paddingVertical: Dimens.SPACE_16 }}>
         {filterMenus.map((item, index) => {
           const isActive = activeFilterIndex === index;
           return (
             <Button
               style={{
-                marginRight: 10,
+                marginRight: Dimens.SPACE_8,
                 backgroundColor: isActive ? Colors.BLACK : Colors.LIGHT_GRAY,
               }}
               key={item.title}
@@ -88,21 +88,16 @@ function JobScreen(): React.ReactElement {
         ItemSeparatorComponent={renderSeperator}
         contentContainerStyle={{ paddingVertical: Dimens.SPACE_16 }}
       />
-      <Pressable
-        style={{
-          position: 'absolute',
+
+      <FloatButton
+        iconName="bolt"
+        iconColor="orange"
+        iconSize={24}
+        position={{
           bottom: 16,
           left: 16,
-          backgroundColor: 'white',
-          width: 48,
-          height: 48,
-          borderRadius: 24,
-          justifyContent: 'center',
-          alignItems: 'center',
         }}
-      >
-        <Icon name="flash" color="orange" size={24} />
-      </Pressable>
+      />
     </Container>
   );
 }

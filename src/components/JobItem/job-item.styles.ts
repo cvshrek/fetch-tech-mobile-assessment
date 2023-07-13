@@ -5,7 +5,7 @@ import { StyleSheet } from 'react-native';
 
 const containerStyles = StyleSheet.create({
   container: {
-    backgroundColor: Colors.LIGHT_BLACK,
+    backgroundColor: Colors.BLACK,
     padding: Dimens.SPACE_16,
   },
   text: {
@@ -13,6 +13,9 @@ const containerStyles = StyleSheet.create({
   },
   infoText: {
     fontSize: FontSizes.FONT_14,
+  },
+  mainInfo: {
+    fontSize: FontSizes.FONT_18,
   },
   amount: {
     fontSize: FontSizes.FONT_22,
@@ -27,12 +30,12 @@ const containerStyles = StyleSheet.create({
   },
   routeIcon: {
     color: Colors.BLUE,
+    marginTop: 1,
   },
   lineContainer: {
     ...StyleSheet.absoluteFillObject,
     width: 20,
     alignItems: 'center',
-    marginTop: 1,
   },
   line: {
     position: 'absolute',

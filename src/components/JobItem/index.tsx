@@ -31,7 +31,7 @@ function JobItem(props: JobItemProps): React.ReactElement<JobItemProps> {
     <TouchableOpacity onPress={onPress}>
       <View style={styles.container}>
         <Row justify="space-between">
-          <Text style={styles.text} isBold>{startPoint}</Text>
+          <Text style={[styles.text, styles.mainInfo]} isBold>{startPoint}</Text>
           <View style={{ alignItems: 'flex-end' }}>
             <Text style={[styles.text, styles.amount]}>{amount}</Text>
             <Row>
@@ -48,7 +48,7 @@ function JobItem(props: JobItemProps): React.ReactElement<JobItemProps> {
         </Row>
         <View style={styles.routeContainer}>
           {routes?.map((item: TRoute, index: number) => (
-            <View key={item.name}>
+            <View key={item.name} style={{ justifyContent: 'center'}}>
               <View style={styles.lineContainer}>
                 <View style={[styles.line]}>
                   <View style={index !== routes.length - 1 ? styles.lineDraw : { width: 0 }} />
@@ -57,8 +57,8 @@ function JobItem(props: JobItemProps): React.ReactElement<JobItemProps> {
                   !index ? (
                     <Icon
                       name="man"
-                      style={[styles.routeIcon]}
-                      size={16}
+                      style={[styles.routeIcon, { marginTop: 5 }]}
+                      size={12}
                     />
                   ) : (
                     <Icon
@@ -75,7 +75,7 @@ function JobItem(props: JobItemProps): React.ReactElement<JobItemProps> {
                   marginBottom: index !== routes.length - 1 ? Dimens.SPACE_32 : 0,
                 }}
               >
-                <Text style={styles.text} isBold>
+                <Text style={[styles.text, styles.mainInfo]} isBold>
                   {item.name}
                   <Text style={styles.text} isLight>{` - ${item.address}`}</Text>
                 </Text>

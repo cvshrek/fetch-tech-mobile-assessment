@@ -5,7 +5,8 @@ import { Colors } from '@constants/colors';
 import styles from './container.styles';
 
 interface Props extends ViewProps {
-  safeArea?: boolean
+  safeArea?: boolean,
+  gradientBackground?: boolean
 }
 
 function Container(props: Props): React.ReactElement<Props> {
@@ -13,15 +14,20 @@ function Container(props: Props): React.ReactElement<Props> {
     style,
     children,
     safeArea,
+    gradientBackground,
   } = props;
 
   const mainView = (
     <View style={[styles.container, style]}>
-      <LinearGradient
-        locations={[0.6, 0.9]}
-        colors={[Colors.WHITE, Colors.DARK_GRAY]}
-        style={styles.shadowBackground}
-      />
+      {
+        gradientBackground ? (
+          <LinearGradient
+            locations={[0.6, 0.9]}
+            colors={[Colors.WHITE, Colors.DARK_GRAY]}
+            style={styles.shadowBackground}
+          />
+        ) : null
+      }
       {children}
     </View>
   );
