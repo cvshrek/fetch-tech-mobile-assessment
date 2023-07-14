@@ -32,6 +32,7 @@ function Button(props: Props):React.ReactElement {
       onPress={onPress}
       disabled={disabled}
       style={[styles.wrapper, style]}
+      testID="button"
     >
       <View style={[styles.container, containerStyle]}>
         <Text style={[styles.label, labelStyle]}>

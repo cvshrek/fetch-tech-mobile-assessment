@@ -1,19 +1,17 @@
-import React, { useCallback, useRef } from 'react';
-import { ActivityIndicator, View, ViewProps } from 'react-native';
+import React, { useCallback } from 'react';
+import { ActivityIndicator, ViewProps } from 'react-native';
 import { GestureDetector, Gesture } from 'react-native-gesture-handler';
 import Animated, {
-  Extrapolate,
-  interpolate,
   runOnJS, useAnimatedStyle, useSharedValue, withTiming,
 } from 'react-native-reanimated';
-import { SCREEN_WIDTH, scaleSize } from '@utils';
+import { SCREEN_WIDTH } from '@utils';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import { moderateVerticalScale } from 'react-native-size-matters';
 
 import textStyles from '@components/Text/text.style';
 import { FontSizes } from '@constants/fonts';
 import { Colors } from '@constants/colors';
 import styles from './button-slider.styles';
-import { moderateVerticalScale } from 'react-native-size-matters';
 
 interface Props extends ViewProps {
   label?: string,
