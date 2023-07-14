@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 import { Colors } from '@constants/colors';
 import { FontSizes, Fonts } from '@constants/fonts';
 
-const containerStyles = StyleSheet.create({
+const textStyles = StyleSheet.create({
   text: {
     fontFamily: Fonts.PRIMARY_FONT_REGULAR,
     fontSize: FontSizes.FONT_16,
@@ -16,4 +16,4 @@ const containerStyles = StyleSheet.create({
   },
 });
 
-export default containerStyles;
+export default textStyles;

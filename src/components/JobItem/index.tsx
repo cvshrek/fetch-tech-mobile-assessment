@@ -6,7 +6,7 @@ import {
 } from 'react-native';
 import Row from '@components/Row';
 import { Text } from '@components';
-import Icon from 'react-native-vector-icons/Ionicons';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 import type { TRoute } from '@types';
 
 import { Dimens } from '@constants/dimens';
@@ -34,9 +34,9 @@ function JobItem(props: JobItemProps): React.ReactElement<JobItemProps> {
           <Text style={[styles.text, styles.mainInfo]} isBold>{startPoint}</Text>
           <View style={{ alignItems: 'flex-end' }}>
             <Text style={[styles.text, styles.amount]}>{amount}</Text>
-            <Row>
+            <Row style={{ alignItems: 'center' }}>
               <Icon
-                name="time-outline"
+                name="access-time"
                 size={16}
                 style={[styles.text, styles.timeIcon]}
               />
@@ -48,7 +48,7 @@ function JobItem(props: JobItemProps): React.ReactElement<JobItemProps> {
         </Row>
         <View style={styles.routeContainer}>
           {routes?.map((item: TRoute, index: number) => (
-            <View key={item.name} style={{ justifyContent: 'center'}}>
+            <View key={item.name} style={{ justifyContent: 'center' }}>
               <View style={styles.lineContainer}>
                 <View style={[styles.line]}>
                   <View style={index !== routes.length - 1 ? styles.lineDraw : { width: 0 }} />
@@ -56,13 +56,13 @@ function JobItem(props: JobItemProps): React.ReactElement<JobItemProps> {
                 {
                   !index ? (
                     <Icon
-                      name="man"
+                      name="hail"
                       style={[styles.routeIcon, { marginTop: 5 }]}
-                      size={12}
+                      size={16}
                     />
                   ) : (
                     <Icon
-                      name="ellipse"
+                      name="fiber-manual-record"
                       style={[styles.routeIcon]}
                       size={20}
                     />

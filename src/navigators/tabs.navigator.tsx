@@ -7,6 +7,8 @@ import { FontSizes, Fonts } from '@constants/fonts';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { Dimens } from '@constants/dimens';
 import { Colors } from '@constants/colors';
+import { isIphoneX } from '@utils';
+import { verticalScale } from 'react-native-size-matters';
 
 type TabsParamList = {
   HomeScreen: undefined;
@@ -36,14 +38,16 @@ const getDefaultTabConfigs = (
   title: string,
   showBadge: boolean = false,
 ): BottomTabNavigationOptions => ({
+  tabBarAllowFontScaling: true,
   tabBarStyle: {
-    paddingVertical: Dimens.SPACE_8,
-    height: 90,
+    padding: Dimens.SPACE_8,
+    height: isIphoneX() ? verticalScale(86) : (76),
   },
   tabBarLabel: label,
   tabBarLabelStyle: {
     fontSize: FontSizes.FONT_14,
     fontFamily: Fonts.PRIMARY_FONT_REGULAR,
+    paddingBottom: Dimens.SPACE_16,
   },
   tabBarActiveTintColor: Colors.BLUE,
   tabBarBadge: showBadge ? '' : undefined,
@@ -66,7 +70,7 @@ function AppTabs() {
   const [hasNewJob] = useState(true);
   return (
     <Tab.Navigator screenOptions={tabsConfigs} initialRouteName="JobScreen">
-      <Tab.Screen name="HomeScreen" component={HomeScreen} options={getDefaultTabConfigs('Home', 'home', 'Home')} />
+      <Tab.Screen name="HomeScreen" component={HomeScreen} options={getDefaultTabConfigs('Home', 'home-filled', 'Home')} />
       <Tab.Screen name="CoinScreen" component={CoinScreen} options={getDefaultTabConfigs('Coin', 'attach-money', 'Coin')} />
       <Tab.Screen name="JobScreen" component={JobScreen} options={getDefaultTabConfigs('Job', 'directions-car', 'Jobs', hasNewJob)} />
       <Tab.Screen name="MenuScreen" component={JobScreen} options={getDefaultTabConfigs('Menu', 'menu', 'Menu')} />

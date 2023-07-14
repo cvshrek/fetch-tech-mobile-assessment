@@ -4,8 +4,8 @@ import { StyleSheet } from 'react-native';
 
 const containerStyles = StyleSheet.create({
   wrapper: {
-    height: Dimens.DIMEN_42,
-    borderRadius: Dimens.DIMEN_42 / 2,
+    height: Dimens.DIMEN_40,
+    borderRadius: Dimens.DIMEN_40 / 2,
     backgroundColor: Colors.BLACK,
   },
   container: {

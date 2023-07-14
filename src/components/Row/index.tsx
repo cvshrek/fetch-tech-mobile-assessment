@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { View, ViewProps } from 'react-native';
 import styles from './row.styles';
@@ -14,7 +15,10 @@ function Row(props: Props): React.ReactElement<Props> {
   } = props;
 
   return (
-    <View style={[styles.container, style, { justifyContent: justify }]}>
+    <View
+      {...props}
+      style={[styles.container, { justifyContent: justify }, style]}
+    >
       {children}
     </View>
   );

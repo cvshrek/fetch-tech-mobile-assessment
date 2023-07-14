@@ -2,6 +2,7 @@ import { Dimensions, PixelRatio, Platform } from 'react-native';
 
 const WINDOW_WIDTH = Dimensions.get('window').width;
 const BASE_WIDTH = 375;
+export const { height: SCREEN_HEIGHT, width: SCREEN_WIDTH } = Dimensions.get('window');
 
 export const scaleSize = (size: number) => (WINDOW_WIDTH / BASE_WIDTH) * size;
 

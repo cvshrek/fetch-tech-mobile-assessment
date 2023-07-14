@@ -12,6 +12,8 @@ export enum FontSizes {
   FONT_16 = scaleFont(16),
   FONT_18 = scaleFont(18),
   FONT_22 = scaleFont(22),
+  FONT_24 = scaleFont(24),
+  FONT_28 = scaleFont(28),
   FONT_32 = scaleFont(32),
   FONT_64 = scaleFont(64),
 }

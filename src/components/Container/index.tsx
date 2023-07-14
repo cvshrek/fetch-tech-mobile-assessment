@@ -6,7 +6,8 @@ import styles from './container.styles';
 
 interface Props extends ViewProps {
   safeArea?: boolean,
-  gradientBackground?: boolean
+  gradientBackground?: boolean,
+  noPadding?: boolean,
 }
 
 function Container(props: Props): React.ReactElement<Props> {
@@ -15,10 +16,11 @@ function Container(props: Props): React.ReactElement<Props> {
     children,
     safeArea,
     gradientBackground,
+    noPadding,
   } = props;
 
   const mainView = (
-    <View style={[styles.container, style]}>
+    <View style={[styles.container, style, noPadding && { padding: 0 }]}>
       {
         gradientBackground ? (
           <LinearGradient

@@ -5,9 +5,9 @@ const floatButtonStyles = StyleSheet.create({
   container: {
     position: 'absolute',
     backgroundColor: 'white',
-    width: Dimens.DIMEN_48,
-    height: Dimens.DIMEN_48,
-    borderRadius: Dimens.DIMEN_48 / 2,
+    width: Dimens.DIMEN_40,
+    height: Dimens.DIMEN_40,
+    borderRadius: Dimens.DIMEN_40 / 2,
     justifyContent: 'center',
     alignItems: 'center',
   },

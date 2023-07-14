@@ -7,6 +7,7 @@ const containerStyles = StyleSheet.create({
   container: {
     backgroundColor: Colors.BLACK,
     padding: Dimens.SPACE_16,
+    borderRadius: Dimens.DIMEN_5,
   },
   text: {
     color: Colors.WHITE,
